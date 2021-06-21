@@ -1,6 +1,6 @@
 import React, { useState, useRef } from 'react';
 
-interface Person {
+interface Persons {
   firstName: string;
   lastName: string;
 }
@@ -10,7 +10,7 @@ interface Props {
   ok?: boolean;
   i?: number;
   fn?: (bob: string) => string;
-  person: Person;
+  person: Persons;
   handleChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
