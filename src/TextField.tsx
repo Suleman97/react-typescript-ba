@@ -1,3 +1,5 @@
+import React, { useState, useRef } from 'react';
+
 interface Person {
   firstName: string;
   lastName: string;
@@ -9,12 +11,16 @@ interface Props {
   i?: number;
   fn?: (bob: string) => string;
   person: Person;
+  handleChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
-export const TextField: React.FC<Props> = () => {
+export const TextField: React.FC<Props> = ({ handleChange }) => {
+  const [count, setCount] = useState<{ text: string }>({ text: 'hey' });
+  const inputRef = useRef<HTMLInputElement>(null);
+
   return (
     <div>
-      <input />
+      <input ref={inputRef} onChange={handleChange} />
     </div>
   );
 };
